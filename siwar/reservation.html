@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation</title>
+
+    <!-- Bootstrap local CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animation CSS (Animate.css) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Styles personnalisés -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5 animate__animated animate__fadeIn">
+        <h2 class="mb-4">Réservez votre place pour l'événement</h2>
+        <form action="/submit-reservation" >
+            <div class="mb-3">
+                <label for="name" class="form-label">Nom Complet</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Adresse Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="event" class="form-label">Sélectionnez l'Événement</label>
+                <select class="form-select" id="event" name="event" required>
+                    <option value="concert-rock">Concert Rock</option>
+                    <option value="jazz-night">Jazz Night</option>
+                    <option value="festival-electro">Festival Électro</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="tickets" class="form-label">Nombre de Billets</label>
+                <input type="number" class="form-control" id="tickets" name="tickets" min="1" required>
+            </div>
+            <button  class="btn btn-primary">Réserver</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap local JS -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

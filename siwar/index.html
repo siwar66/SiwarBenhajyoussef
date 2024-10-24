@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation Événement Musical</title>
+
+    <!-- Bootstrap local CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animation CSS (Animate.css) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="custom.css" rel="stylesheet">
+
+    <!-- Styles personnalisés -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .event-banner {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+        }
+        /* Animation des cartes */
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header avec navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">MusicEvents</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Événements</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Section Bannière avec une image d'événement -->
+    <section class="event-banner" style="background-image: url('img/im1.jpg');">
+        <div class="container text-white text-center py-5">
+            <h1 class="animate__animated animate__fadeInDown">Prochains Événements Musicaux</h1>
+            <p class="animate__animated animate__fadeInUp">Réservez vos places dès maintenant !</p>
+        </div>
+    </section>
+
+    <!-- Section Liste des événements -->
+    <main>
+        <section class="container my-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card animate__animated animate__zoomIn">
+                        <img src="img/Rock.jpg" class="card-img-top" alt="Événement 1" style="height: 300px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Concert Rock</h5>
+                            <p class="card-text">Un concert rock qui promet de faire vibrer la scène.</p>
+                            <!-- Bouton pour ouvrir le modal -->
+                            <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#eventRockModal">Plus de détails</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-md-4">
+                    <div class="card animate__animated animate__zoomIn">
+                        <img src="img/Jazz.jpg" class="card-img-top" alt="Événement 2" style="height: 300px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Jazz Night</h5>
+                            <p class="card-text">Une nuit de jazz avec des artistes internationaux.</p>
+                            <button type="button" class="btn btn-info mt-2" data-bs-toggle="modal" data-bs-target="#eventJazzModal">Plus de détails</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card animate__animated animate__zoomIn">
+                        <img src="img/Electro.jpg" class="card-img-top" alt="Événement 3" style="height: 300px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Festival Électro</h5>
+                            <p class="card-text">Un festival électro en plein air, à ne pas manquer !</p>
+                            <!-- Bouton modifié avec une alerte -->
+                            <button type="button" class="btn btn-primary" onclick="showAlert()">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Alerte Bootstrap cachée initialement -->
+                <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert" id="reservationAlert" style="display: none;">
+                    Cet événement est complet, vous ne pouvez pas réserver.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                
+                <!-- Script JavaScript pour afficher l'alerte -->
+                <script>
+                    function showAlert() {
+                        // Rendre l'alerte visible
+                        document.getElementById('reservationAlert').style.display = 'block';
+                    }
+                </script>
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 MusicEvents - Tous droits réservés</p>
+    </footer>
+
+
+<!-- Modal pour le concert Rock -->
+<div class="modal fade" id="eventRockModal" tabindex="-1" aria-labelledby="eventRockModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventRockModalLabel">Détails du Concert Rock</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Un concert rock incroyable avec les meilleurs artistes du moment. Ne manquez pas cet événement exceptionnel !</p>
+          <ul>
+              <li>Date : 12 décembre 2024</li>
+              <li>Lieu : Stade de France</li>
+              <li>Artistes : Band A, Band B, et plus encore</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <a href="reservation.html" class="btn btn-primary">Réserver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Modal pour le Jazz Night -->
+<div class="modal fade" id="eventJazzModal" tabindex="-1" aria-labelledby="eventJazzModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eventJazzModalLabel">Détails du Jazz Night</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Vivez une soirée jazz inoubliable avec des musiciens de renommée mondiale.</p>
+          <ul>
+              <li>Date : 14 décembre 2024</li>
+              <li>Lieu : Salle de concert XYZ</li>
+              <li>Artistes : Jazz Band X, Y, Z</li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+          <a href="reservation.html" class="btn btn-primary">Réserver</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+    <!-- Bootstrap local JS -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

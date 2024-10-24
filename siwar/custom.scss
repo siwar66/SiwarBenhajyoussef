@@ -1,0 +1,9 @@
+// Import de Bootstrap depuis node_modules
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Personnalisation des couleurs de Bootstrap
+$primary: #ff5733; /* Une couleur orange vif pour le thème principal */
+$secondary: #4CAF50; /* Vert pour le thème secondaire */
+
+// Ensuite, recompile le fichier pour appliquer ces changements
+@import "node_modules/bootstrap/scss/bootstrap";
