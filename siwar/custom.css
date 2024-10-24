@@ -1,9 +1,52 @@
-@charset "UTF-8";
-/*!
- * Bootstrap  v5.3.3 (https://getbootstrap.com/)
- * Copyright 2011-2024 The Bootstrap Authors
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body{
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+    url("");
+}
+
+.section-glassmorphism{
+background: rgba(251, 251, 239, 0.53);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(10.1px);
+-webkit-backdrop-filter: blur(10.1px);
+border: 1px solid rgba(251, 251, 239, 0.3);
+}
+
+.fancyBorder-hero-img{
+   border-radius: 30% 70% 73% 27% / 30% 30% 70% 70%;
+  }
+  
+.fancyBorder-navbar{
+    border-radius:55% 42% 48% 51% / 44% 60% 40% 52%;
+    border: 5px solid #4357AD;
+  }
+
+/* Styles pour le glassmorphism */
+.header__container {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--header-radius);
+}
+
+.hero {
+  border-radius: var(--hero-radius);
+}
+
+.hero__cta {
+  transition: all 0.3s ease;
+  background-color: #4357AD;
+  border: 2px solid #FBFBEF;
+  color: #FBFBEF;
+}
+
+.hero__cta:hover {
+  background-color: transparent;
+  color: #4357AD;
+  border-color: #4357AD;
+}
 :root,
 [data-bs-theme=light] {
   --bs-blue: #0d6efd;
